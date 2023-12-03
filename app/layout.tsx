@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" type="image/x-icon" href="/logo.png" />
+      </head>
       <body className='bg-[#F5F6F8]'>{children}</body>
     </html>
   )
