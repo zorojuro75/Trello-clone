@@ -34,7 +34,7 @@ const Board = (props: Props) => {
     };
 
     fetchData();
-  });
+  }, []);
 
   async function updateTaskStatus(taskId: string, newStatus: string) {
     const { data, error } = await supabase
@@ -45,10 +45,9 @@ const Board = (props: Props) => {
     if (error) {
       console.error("Error updating task status:", error);
     }
+    const updatedTasks = await getTodosGroupedByColumn();
+    setAllTasks(updatedTasks);
     return data;
-  }
-  function addtask() {
-    throw new Error("Function not implemented.");
   }
 
   return (
